@@ -14,7 +14,7 @@ $(document).ready(function() {
             _.each(result.Countries, function(country) {
                 if (!(slugsDone.includes(country.Slug)) && country.Slug != "") {
                     dataSet.push({
-                        "Country": country.Country,
+                        "Country": country.Country == "US" ? "United States" : country.Country,
                         "NewConfirmed": Number(country.NewConfirmed).toLocaleString(),
                         "TotalConfirmed": Number(country.TotalConfirmed).toLocaleString(),
                         "NewDeaths": Number(country.NewDeaths).toLocaleString(),
