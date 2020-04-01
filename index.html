@@ -3,11 +3,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.20/fc-3.3.0/fh-3.1.6/r-2.2.3/sc-2.0.1/sp-1.0.1/datatables.min.css"/>
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.20/fc-3.3.0/fh-3.1.6/r-2.2.3/sc-2.0.1/sp-1.0.1/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
     <script src="./coronavirus.js"></script>
 
     <div>
-        <div style='text-align: center;font-weight: bold;margin-bottom: 50px;font-size: 25px;'>Coronavirus Cases</div>
-        <div><table id='countries' class='display'></table></div>
-        <div></div>
+        <div style='text-align: center;font-weight: bold;margin-bottom: 50px;font-size: 25px;'>Coronavirus Stats</div>
+        <div>
+            <table id='countries' class='display'></table>
+        </div>
+        <div>
+            <div></div>
+            <canvas id="line-chart" width="800" height="450"></canvas>
+        </div>
     </div>
 </html>
