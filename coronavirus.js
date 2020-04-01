@@ -12,7 +12,7 @@ $(document).ready(function() {
             var dataSet = [];
             var slugsDone = [];
             _.each(result.Countries, function(country) {
-                if (!(slugsDone.includes(country.Slug))) {
+                if (!(slugsDone.includes(country.Slug)) && country.Slug != "") {
                     dataSet.push({
                         "Country": country.Country,
                         "NewConfirmed": Number(country.NewConfirmed).toLocaleString(),
@@ -28,14 +28,15 @@ $(document).ready(function() {
             })
             $('#countries').DataTable( {
                 data: dataSet,
+                "order": [[ 2, "desc" ]],
                 columns: [
-                    { "title": 'Country', data: 'Country'},
-                    { "title":'New Cases', data: 'NewConfirmed' },
-                    { "title": 'Total Cases', data: 'TotalConfirmed' },
-                    { "title": 'New Deaths', data: 'NewDeaths' },
-                    { "title": 'Total Deaths', data: 'TotalDeaths' },
-                    { "title": 'New Recovered', data: 'NewRecovered' },
-                    { "title": 'Total Recovered', data: 'TotalRecovered' }
+                    { "title": 'Country', data: 'Country' },
+                    { "title":'New Cases', data: 'NewConfirmed', "orderSequence": [ "desc", "asc"]  },
+                    { "title": 'Total Cases', data: 'TotalConfirmed', "orderSequence": [ "desc", "asc"]  },
+                    { "title": 'New Deaths', data: 'NewDeaths', "orderSequence": [ "desc", "asc"]  },
+                    { "title": 'Total Deaths', data: 'TotalDeaths', "orderSequence": [ "desc", "asc"]  },
+                    { "title": 'New Recovered', data: 'NewRecovered', "orderSequence": [ "desc", "asc"]  },
+                    { "title": 'Total Recovered', data: 'TotalRecovered', "orderSequence": [ "desc", "asc"]  }
                 ]
             });
         }
