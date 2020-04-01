@@ -11,7 +11,7 @@ $(document).ready(function() {
             _.each(result.Countries, function(country) {
                 if (!(slugsDone.includes(country.Slug)) && country.Slug != "") {
                     countrySlugToName[country.Slug] = country.Country;
-                    $("#chartCountrySelect").append("<option value='" + country.Slug + "'>" + country.Country + "</option>")
+                    $("#chartCountrySelect").append("<option value='" + country.Slug + "'>" + (country.Country == "US" ? "United States" : country.Country) + "</option>")
 
                     dataSet.push({
                         "Country": country.Country == "US" ? "United States" : country.Country,
@@ -122,6 +122,7 @@ $(document).ready(function() {
 
             // Get the US Stats by default.
             graphByCountry("us", "United States");   
+            $("#chartCountrySelect").val("us");
             
             // Set the onChange event for the country select dropdown.
             $("#chartCountrySelect").on('change', function() {
