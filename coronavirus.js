@@ -29,6 +29,7 @@ $(document).ready(function() {
             $('#countries').DataTable( {
                 data: dataSet,
                 "order": [[ 2, "desc" ]],
+                responsive: true,
                 columns: [
                     { "title": 'Country', data: 'Country' },
                     { "title":'New Cases', data: 'NewConfirmed', "orderSequence": [ "desc", "asc"]  },
@@ -224,7 +225,8 @@ $(document).ready(function() {
                               title: {
                                 display: true,
                                 text: statesNames[state]
-                              }
+                              },
+                              responsive: true
                             }
                           });
                     }});
